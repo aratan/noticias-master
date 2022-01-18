@@ -1,0 +1,19 @@
+
+<ion-grid fixed>
+  <ion-row>
+    <ion-col *ngFor="let l of lectura; let i = index"
+      size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+      
+      <app-articulo [l]="l" [index]="i +1 " ></app-articulo>
+
+
+    </ion-col>  
+  </ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-grid>  
