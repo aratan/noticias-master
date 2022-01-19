@@ -39,7 +39,7 @@ async presentActionSheet() {
         type: 'delete'
       },
       handler: () => {
-        console.log('Delete clicked');
+        this.borrarFavorito();
       }
     }, {
       text: 'Compartir',
@@ -47,13 +47,6 @@ async presentActionSheet() {
       data: 10,
       handler: () => {
         this.compartir();
-      }
-    }, {
-      text: 'Play (open modal)',
-      icon: 'caret-forward-circle',
-      data: 'Data value',
-      handler: () => {
-        console.log('Play clicked');
       }
     }, {
       text: 'Favorito',
@@ -80,6 +73,9 @@ async presentActionSheet() {
   ngOnInit() {}
 
   onOpenMenu() {
+  
+    //const borraFavoritos = this.storageService.borraFavoritos(this.l);
+
     this.presentActionSheet();
   }
 
@@ -98,6 +94,13 @@ async presentActionSheet() {
     this.storageService.guardaArticulo(this.l);
     console.log('Favorito clicked');
   }
+
+  borrarFavorito(){
+    this.storageService.borrarArticulo(this.l);
+  }
+  
+
+
 
   abreArticulo(){
     const browser = this.iab.create(this.l.url);

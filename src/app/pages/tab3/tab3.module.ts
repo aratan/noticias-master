@@ -9,6 +9,7 @@ import { ExploreContainerComponentModule } from '../../explore-container/explore
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { ComponentesModule } from 'src/app/componentes/componentes.module';
 
+
 @NgModule({
   imports: [
     IonicModule,
@@ -17,6 +18,7 @@ import { ComponentesModule } from 'src/app/componentes/componentes.module';
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
+    ComponentesModule,
     ComponentesModule
   ],
   declarations: [Tab3Page]
